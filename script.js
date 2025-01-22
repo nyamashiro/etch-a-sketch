@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
+let mousedown = false;
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
@@ -13,4 +14,21 @@ function createGrid(size) {
   }
 }
 
-createGrid(25);
+gridContainer.addEventListener("mousedown", (e) => {
+  mousedown = true;
+  if (e.target.classList.contains("row")) {
+    e.target.classList.add("colored")
+  }
+})
+
+gridContainer.addEventListener("mouseover", (e) => {
+  if (mousedown && e.target.classList.contains("row")) {
+    e.target.classList.add("colored")
+  }
+})
+
+window.addEventListener("mouseup", () => {
+  mousedown = false;
+})
+
+createGrid(16)
