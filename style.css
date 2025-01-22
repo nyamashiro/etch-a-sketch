@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: flex;
+  width: 750px;
+  height: 750px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.row {
+  flex: 1;
+  border-right: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/* Remove extra borders from the last row and column */
+.column:last-child .row {
+  border-right: none; /* Remove right border of the last column */
+}
+
+.row:last-child {
+  border-bottom: none; /* Remove bottom border of the last row */
+}
