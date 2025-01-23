@@ -16,6 +16,10 @@ function createGrid(size) {
   }
 }
 
+function randomColor () {
+  return Math.floor(Math.random() * 257)
+}
+
 function deleteGrid() {
   let child = gridContainer.lastElementChild;
 
@@ -39,13 +43,14 @@ window.addEventListener("mousedown", (e) => {
   mousedown = true;
   e.preventDefault();
   if (e.target.classList.contains("row")) {
-    e.target.classList.add("colored")
+    e.target.style.backgroundColor = "rgb(" + randomColor() + "," + randomColor() + "," + randomColor() + ")";
   }
+  console.log(e.target.style.backgroundColor)
 })
 
 gridContainer.addEventListener("mouseover", (e) => {
   if (mousedown && e.target.classList.contains("row")) {
-    e.target.classList.add("colored")
+    e.target.style.backgroundColor = "rgb(" + randomColor() + "," + randomColor() + "," + randomColor() + ")";
   }
 })
 
