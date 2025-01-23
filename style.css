@@ -40,8 +40,3 @@ body {
 .row:last-child {
   border-bottom: none; /* Remove bottom border of the last row */
 }
-
-
-.colored {
-  background-color: red;
-}
