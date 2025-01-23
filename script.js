@@ -16,8 +16,8 @@ function createGrid(size) {
   }
 }
 
-function randomColor () {
-  return Math.floor(Math.random() * 257)
+function generateRandomColor() {
+  return Math.floor(Math.random() * 256)
 }
 
 function deleteGrid() {
@@ -43,14 +43,13 @@ window.addEventListener("mousedown", (e) => {
   mousedown = true;
   e.preventDefault();
   if (e.target.classList.contains("row")) {
-    e.target.style.backgroundColor = "rgb(" + randomColor() + "," + randomColor() + "," + randomColor() + ")";
+    e.target.style.backgroundColor = "rgb(" + generateRandomColor() + "," + generateRandomColor() + "," + generateRandomColor() + ")";
   }
-  console.log(e.target.style.backgroundColor)
 })
 
 gridContainer.addEventListener("mouseover", (e) => {
   if (mousedown && e.target.classList.contains("row")) {
-    e.target.style.backgroundColor = "rgb(" + randomColor() + "," + randomColor() + "," + randomColor() + ")";
+    e.target.style.backgroundColor = "rgb(" + generateRandomColor() + "," + generateRandomColor() + "," + generateRandomColor() + ")";
   }
 })
 
