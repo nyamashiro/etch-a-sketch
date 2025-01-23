@@ -14,8 +14,9 @@ function createGrid(size) {
   }
 }
 
-gridContainer.addEventListener("mousedown", (e) => {
+window.addEventListener("mousedown", (e) => {
   mousedown = true;
+  e.preventDefault();
   if (e.target.classList.contains("row")) {
     e.target.classList.add("colored")
   }
